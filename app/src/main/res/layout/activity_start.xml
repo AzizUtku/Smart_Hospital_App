@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:theme="@style/AppThemeStart"
+    tools:context=".StartActivity">
+
+    <TextView
+        android:id="@+id/start_txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start_img_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Akıllı Hastane Sistemi"
+        android:textColor="#fff"
+        android:textSize="25sp" />
+
+    <ProgressBar
+        android:id="@+id/start_pb_loading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start_txt_title"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/start_img_logo"
+        android:layout_width="211dp"
+        android:layout_height="188dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/ic_logo_start" />
+
+</RelativeLayout>

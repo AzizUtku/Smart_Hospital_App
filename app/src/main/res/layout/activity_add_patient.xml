@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f6f7"
+    tools:context=".AddPatientActivity">
+
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/app_main_bar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_toolbar"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Adı"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Soyadı"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_room_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Oda Numarası"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_tc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="T.C. Kimlik No"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Doğum Tarihi"
+                android:digits="0123456789."
+                android:inputType="date"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_relative_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Hasta Yakını Telefon No"
+                android:inputType="phone"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_crucial_pulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Güvenli Nabız Aralığı (bpm)"
+                android:inputType="numberSigned"
+                android:digits="1234567890-"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_crucial_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:digits="1234567890-"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Güvenli Hasta Sıcaklığı (°C)"
+                android:inputType="numberSigned"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_crucial_room_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Güvenli Oda Sıcaklığı (°C)"
+                android:inputType="numberSigned"
+                android:digits="1234567890-"
+                android:selectAllOnFocus="true"
+                android:text="26"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_crucial_sys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Güvenli Büyük Tansiyon Aralığı (mmHg)"
+                android:inputType="numberSigned"
+                android:digits="1234567890-"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_crucial_dia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Güvenli Küçük Tansiyon Aralığı (mmHg)"
+                android:inputType="numberSigned"
+                android:digits="1234567890-"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/add_patient_crucial_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Güvenli Kan Şekeri Aralığı (mg/dL)"
+                android:inputType="numberSigned"
+                android:digits="1234567890-"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                app:met_floatingLabel="normal" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
