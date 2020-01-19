@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Akıllı Hastane Sistemi</string>
+    <string name="app_name">Smart Hospital System</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error">Error!</string>
     <string name="error_msg">An error occured. Please try again!</string>
     <string name="okay">Okay</string>
-    <string name="About">about</string>
-    <string name="about_msg">ŞehirdeHachathon için yapılmıştır.\n\nVersion:\u0020</string>
+    <string name="About">About</string>
+    <string name="about_msg">For ŞehirdeHachathon.\n\nVersion:\u0020</string>
     <string name="new_patient_record">New patient record</string>
     <string name="smart_hospital_system">\u0020\u0020Smart Hospital System</string>
     <string name="identity_no">Identity No</string>
