@@ -1,6 +1,6 @@
 # Smart Hospital App
 
-![](https://github.com/AzizUtku/Smart_Hospital_App/blob/master/Screenshots/login_gif.gif)
+![](https://github.com/AzizUtku/Smart_Hospital_App/blob/master/Screenshots/resized_login_gif.gif)
 
 ## Screenshots
 * **Login Page**
