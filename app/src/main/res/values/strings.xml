@@ -3,4 +3,29 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error">Error!</string>
+    <string name="error_msg">An error occured. Please try again!</string>
+    <string name="okay">Okay</string>
+    <string name="About">about</string>
+    <string name="about_msg">ŞehirdeHachathon için yapılmıştır.\n\nVersion:\u0020</string>
+    <string name="new_patient_record">New patient record</string>
+    <string name="smart_hospital_system">\u0020\u0020Smart Hospital System</string>
+    <string name="identity_no">Identity No</string>
+    <string name="login">Login</string>
+    <string name="forgot_passowrd">Forgat password?</string>
+    <string name="password">Password</string>
+    <string name="search">Search...</string>
+    <string name="add">Add</string>
+    <string name="patients">Patients</string>
+    <string name="profile">Profile</string>
+    <string name="id"><![CDATA[ID >]]></string>
+    <string name="birthday"><![CDATA[Date of birth >]]></string>
+    <string name="patient_relative_contact"><![CDATA[Patient Relative >]]></string>
+    <string name="no_patient">There is no patient!</string>
+    <string name="blood_pressure"><![CDATA[Blood Pressure >]]></string>
+    <string name="patient_temperature"><![CDATA[Patient Temperature >]]></string>
+    <string name="room_temperature"><![CDATA[Room Temperature >]]></string>
+    <string name="pulse"><![CDATA[Pulse >]]></string>
+    <string name="blood_sugar"><![CDATA[Blood Sugar >]]></string>
+    <string name="brain_activity"><![CDATA[Brain Activity >]]></string>
 </resources>

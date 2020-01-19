@@ -85,7 +85,7 @@ public class AddPatientActivity extends AppCompatActivity {
 
         //Set toolbar
         setSupportActionBar(toolbar);
-        txtToolbarTitle.setText("Yeni hasta kaydı");
+        txtToolbarTitle.setText(getApplicationContext().getString(R.string.new_patient_record));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -159,7 +159,7 @@ public class AddPatientActivity extends AppCompatActivity {
                     } else if(response.body() != null && !response.body().isSuccess()){
                         showAlertDialog("Hata!", response.body().getMessage());
                     } else {
-                        showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+                        showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
                     }
 
                 }
@@ -167,7 +167,7 @@ public class AddPatientActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<RestData<Patient>> call, Throwable t) {
                     Log.e(TAG, "NET: addPatient: "  + t.toString());
-                    showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+                    showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
 
                 }
             });
@@ -175,7 +175,7 @@ public class AddPatientActivity extends AppCompatActivity {
 
         catch(Exception ex) {
             Log.e(TAG, "addPatient: NET: Error:" + ex.toString());
-            showAlertDialog("Hata!", "Eksik ya da yanlış bilgi girildi!");
+            showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
         }
 
 
@@ -186,7 +186,7 @@ public class AddPatientActivity extends AppCompatActivity {
         AlertDialog.Builder dialogAbout = new AlertDialog.Builder(AddPatientActivity.this);
         dialogAbout.setTitle(title);
         dialogAbout.setMessage(message);
-        dialogAbout.setPositiveButton("Tamam", null );
+        dialogAbout.setPositiveButton(getApplicationContext().getString(R.string.okay), null);
         dialogAbout.show();
     }
 

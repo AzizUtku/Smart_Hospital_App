@@ -101,7 +101,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Nabız >"
+                        android:text="@string/pulse"
                         android:textColor="#B3000000" />
 
                     <TextView
@@ -138,7 +138,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Hasta Sıcaklığı >"
+                        android:text="@string/patient_temperature"
                         android:textColor="#B3000000" />
 
                     <TextView
@@ -175,7 +175,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Oda Sıcaklığı >"
+                        android:text="@string/room_temperature"
                         android:textColor="#B3000000" />
 
                     <TextView
@@ -255,7 +255,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Tansiyon >"
+                        android:text="@string/blood_pressure"
                         android:textColor="#B3000000" />
 
                 </RelativeLayout>
@@ -274,7 +274,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Kan Şekeri >"
+                        android:text="@string/blood_sugar"
                         android:textColor="#B3000000" />
 
                     <TextView
@@ -312,7 +312,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Beyin Aktivitesi >"
+                        android:text="@string/brain_activity"
                         android:textColor="#B3000000" />
 
                     <TextView
@@ -324,7 +324,7 @@
                         android:layout_centerVertical="true"
                         android:layout_toStartOf="@id/item_patient_img_brain"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Uykuda"
+                        android:text="OK"
                         android:textColor="#B3000000" />
 
                     <ImageView

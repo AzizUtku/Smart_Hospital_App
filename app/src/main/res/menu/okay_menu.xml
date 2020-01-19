@@ -5,6 +5,6 @@
     <item
         android:id="@+id/okay_menu_item_okay"
         android:icon="@drawable/ic_done"
-        android:title="Ekle"
+        android:title="@string/add"
         app:showAsAction="always" />
 </menu>

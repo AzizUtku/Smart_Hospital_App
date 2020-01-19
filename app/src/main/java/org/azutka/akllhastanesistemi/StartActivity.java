@@ -1,5 +1,6 @@
 package org.azutka.akllhastanesistemi;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,8 @@ public class StartActivity extends AppCompatActivity {
 
     private static final String TAG = "StartActivity";
 
+    private Context mContext;
+
     @BindView(R.id.start_img_logo)
     ImageView imgLogo;
 
@@ -38,6 +41,8 @@ public class StartActivity extends AppCompatActivity {
 
         Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_heartbeat);
         imgLogo.startAnimation(anim);
+
+        this.mContext = getApplicationContext();
 
 
         ApiInterface apiService =
@@ -58,36 +63,55 @@ public class StartActivity extends AppCompatActivity {
                 "99"
         );
 
-        Call<RestData<Settings>> call = apiService.getSettings("getAyarlar");
-        call.enqueue(new Callback<RestData<Settings>>() {
+        final Call<RestData<Settings>> call = apiService.getSettings("getAyarlar");
+
+        Runnable runnableRotation = new Runnable() {
             @Override
-            public void onResponse(Call<RestData<Settings>> call, Response<RestData<Settings>> response) {
+            public void run() {
+                call.enqueue(new Callback<RestData<Settings>>() {
+                    @Override
+                    public void onResponse(Call<RestData<Settings>> call, Response<RestData<Settings>> response) {
 
-                if (response.body() != null && response.body().isSuccess()) {
+                        if (response.body() != null && response.body().isSuccess()) {
 
-                    Log.i(TAG, "NET: settings: " + response.body().toString());
+                            Log.i(TAG, "NET: settings: " + response.body().toString());
 
-                    App.settings = response.body().getData();
+                            App.settings = response.body().getData();
 
-                    Intent sigininActivity = new Intent(StartActivity.this,SigninActivity.class);
-                    sigininActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(sigininActivity);
+                            Intent sigininActivity = new Intent(StartActivity.this,SigninActivity.class);
+                            sigininActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(sigininActivity);
 
 
-                } else if(response.body() != null && !response.body().isSuccess()){
-                    showAlertDialog("Hata!", response.body().getMessage());
-                } else {
-                    showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
-                }
+                        } else if(response.body() != null && !response.body().isSuccess()){
+                            // showAlertDialog(mContext.getString(R.string.error), response.body().getMessage());
+
+                            Intent sigininActivity = new Intent(StartActivity.this,SigninActivity.class);
+                            sigininActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(sigininActivity);
+                        } else {
+                            Intent sigininActivity = new Intent(StartActivity.this,SigninActivity.class);
+                            sigininActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(sigininActivity);
+                            // showAlertDialog(mContext.getString(R.string.error), mContext.getString(R.string.error_msg));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RestData<Settings>> call, Throwable t) {
+                        Log.e(TAG, "NET: login: "  + t.toString());
+                        //showAlertDialog(mContext.getString(R.string.error), mContext.getString(R.string.error_msg));
+                        Intent sigininActivity = new Intent(StartActivity.this,SigninActivity.class);
+                        sigininActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(sigininActivity);
+
+                    }
+                });
             }
+        };
 
-            @Override
-            public void onFailure(Call<RestData<Settings>> call, Throwable t) {
-                Log.e(TAG, "NET: login: "  + t.toString());
-                showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+        new Handler().postDelayed(runnableRotation, 1000);
 
-            }
-        });
 
     }
 
@@ -95,7 +119,7 @@ public class StartActivity extends AppCompatActivity {
         AlertDialog.Builder dialogAbout = new AlertDialog.Builder(StartActivity.this);
         dialogAbout.setTitle(title);
         dialogAbout.setMessage(message);
-        dialogAbout.setPositiveButton("Tamam", null );
+        dialogAbout.setPositiveButton(mContext.getString(R.string.okay), null );
         dialogAbout.show();
     }
 }

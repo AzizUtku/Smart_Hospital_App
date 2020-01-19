@@ -117,9 +117,9 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.menu_main_about:
                 AlertDialog.Builder dialogAbout = new AlertDialog.Builder(this);
-                dialogAbout.setTitle("Hakkında");
-                dialogAbout.setMessage("ŞehirdeHachathon için yapılmıştır.\n\nVersion: " + Constants.version);
-                dialogAbout.setPositiveButton("Tamam", null );
+                dialogAbout.setTitle(getApplicationContext().getString(R.string.About));
+                dialogAbout.setMessage(getApplicationContext().getString(R.string.about_msg) + Constants.version);
+                dialogAbout.setPositiveButton(getApplicationContext().getString(R.string.okay), null );
                 dialogAbout.show();
                 break;
             default:

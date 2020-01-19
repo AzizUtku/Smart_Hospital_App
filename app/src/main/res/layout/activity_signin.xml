@@ -60,7 +60,7 @@
                     android:layout_marginRight="20dp"
                     android:ems="10"
                     android:fontFamily="@font/poppins_regular"
-                    android:hint="TC Kimlik No"
+                    android:hint="@string/identity_no"
                     android:inputType="textEmailAddress"
                     android:selectAllOnFocus="true"
                     android:textSize="16sp"
@@ -78,7 +78,7 @@
                     android:layout_marginRight="20dp"
                     android:ems="10"
                     android:fontFamily="@font/poppins_regular"
-                    android:hint="Şifre"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:selectAllOnFocus="true"
                     android:textSize="16sp"
@@ -99,7 +99,7 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="65dp"
                     android:paddingBottom="10dp"
-                    android:text="Giriş yap"
+                    android:text="@string/login"
                     android:textColor="#fff"
                     android:textSize="16sp" />
 
@@ -111,7 +111,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Şifreni mi unuttun?"
+                    android:text="@string/forgot_passowrd"
                     android:textColor="#40000000"
                     android:textSize="13sp" />
 

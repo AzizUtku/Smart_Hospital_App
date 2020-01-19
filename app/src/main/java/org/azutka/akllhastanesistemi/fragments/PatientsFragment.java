@@ -76,7 +76,7 @@ public class PatientsFragment extends Fragment implements SearchView.OnQueryText
             String date = sdf.format(new Date());
             txtTime.setText(date);
 
-            App.getPatients(App.currentPersonel.getTc(), PatientsFragment.recyclerList, getContext());
+            //App.getPatients(App.currentPersonel.getTc(), PatientsFragment.recyclerList, getContext());
 
             mHandler.postDelayed(this,1000);
         }
@@ -96,6 +96,10 @@ public class PatientsFragment extends Fragment implements SearchView.OnQueryText
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerList.setLayoutManager(layoutManager);
 
+        // For test
+        App.patientList.add(new Patient("54855335344", "Brad", "Brown", "01.03.1954", "89/53",  "64",  "38", "110", "OK", "25", "232", "+90507222012", "1", "19.01.2020", "Mert", "0", "100", "0", "38", "0", "40","0", "100", "0","100", "0", "120"));
+        App.patientList.add(new Patient("54855335344", "Jack", "Pitt", "11.03.1944", "75/24",  "37",  "35", "70", "OK", "27", "233", "+905072434012", "1", "19.01.2020", "Mert", "0", "100", "0", "38", "0", "40","0", "100", "0","100", "0", "100"));
+
 
 
         updateRecycler();
@@ -113,6 +117,7 @@ public class PatientsFragment extends Fragment implements SearchView.OnQueryText
 
 
     private void updateRecycler(){
+
         if(App.patientList.size() > 0){
             txtInfo.setVisibility(View.GONE);
             recyclerList.setAdapter(new PatientAdapter(getContext(), App.patientList, recyclerList));

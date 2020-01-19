@@ -39,6 +39,7 @@ public class SigninActivity extends AppCompatActivity {
     private RotateAnimation mRotate;
     private Runnable mRunnableRotation;
     private Handler mHandler = new Handler();
+    private int mCounter = 0;
 
     @BindView(R.id.signin_edt_email)
     EditText edtEmail;
@@ -49,12 +50,11 @@ public class SigninActivity extends AppCompatActivity {
     @BindView(R.id.siginin_img_logo)
     ImageView imgLogo;
 
-    //52588406132
-    //batuhan1
-
     @OnClick(R.id.signin_btn_login)
     public void onLogin(View view) {
-        login(edtEmail.getText().toString(), edtPass.getText().toString());
+
+        mHandler.postDelayed(mRunnableRotation, 0);
+        //login(edtEmail.getText().toString(), edtPass.getText().toString());
     }
 
     @Override
@@ -69,6 +69,14 @@ public class SigninActivity extends AppCompatActivity {
             public void run() {
                 imgLogo.startAnimation(mRotate);
                 mHandler.postDelayed(mRunnableRotation, 1000);
+
+                if (mCounter == 1) {
+                    Intent intentMainActivity = new Intent(SigninActivity.this, MainActivity.class);
+                    intentMainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intentMainActivity);
+                }
+
+                mCounter++;
             }
         };
 
@@ -77,6 +85,8 @@ public class SigninActivity extends AppCompatActivity {
         mRotate.setFillAfter(true);
         mRotate.setInterpolator(new LinearInterpolator());
 
+
+        showAlertDialog("Note", "To open next screen, just click login button.");
 
     }
 
@@ -104,11 +114,11 @@ public class SigninActivity extends AppCompatActivity {
                 } else if(response.body() != null && !response.body().isSuccess()){
                     imgLogo.clearAnimation();
                     mHandler.removeCallbacksAndMessages(null);
-                    showAlertDialog("Hata!", response.body().getMessage());
+                    showAlertDialog(getApplicationContext().getString(R.string.error), response.body().getMessage());
                 } else {
                     imgLogo.clearAnimation();
                     mHandler.removeCallbacksAndMessages(null);
-                    showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+                    showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
                 }
             }
 
@@ -117,7 +127,7 @@ public class SigninActivity extends AppCompatActivity {
                     Log.e(TAG, "NET: login: "  + t.toString());
                     imgLogo.clearAnimation();
                     mHandler.removeCallbacksAndMessages(null);
-                    showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+                    showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
 
 
             }
@@ -158,7 +168,7 @@ public class SigninActivity extends AppCompatActivity {
                     Log.i(TAG, "NET: getPatients: ERR: " + "Response null");
                     imgLogo.clearAnimation();
                     mHandler.removeCallbacksAndMessages(null);
-                    showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+                    showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
                 }
             }
 
@@ -167,7 +177,7 @@ public class SigninActivity extends AppCompatActivity {
                 Log.e(TAG, "NET: getPatients: "  + t.toString());
                 imgLogo.clearAnimation();
                 mHandler.removeCallbacksAndMessages(null);
-                showAlertDialog("Hata!", "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin!");
+                showAlertDialog(getApplicationContext().getString(R.string.error), getApplicationContext().getString(R.string.error_msg));
 
             }
         });
@@ -178,7 +188,7 @@ public class SigninActivity extends AppCompatActivity {
         AlertDialog.Builder dialogAbout = new AlertDialog.Builder(SigninActivity.this);
         dialogAbout.setTitle(title);
         dialogAbout.setMessage(message);
-        dialogAbout.setPositiveButton("Tamam", null );
+        dialogAbout.setPositiveButton(getApplicationContext().getString(R.string.okay), null );
         dialogAbout.show();
     }
 

@@ -19,6 +19,7 @@ import org.azutka.akllhastanesistemi.rest.ApiClient;
 import org.azutka.akllhastanesistemi.rest.ApiInterface;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -31,8 +32,8 @@ public class App extends Application {
 
     private static final String TAG = "App";
 
-    public static Personnel currentPersonel;
-    public static List<Patient> patientList;
+    public static Personnel currentPersonel = new Personnel();
+    public static List<Patient> patientList = new ArrayList<>();
     public static Settings settings;
 
     public static boolean startedToGetDataPerSecond = false;
@@ -40,7 +41,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
     }
 
 

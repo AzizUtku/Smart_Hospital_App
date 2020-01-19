@@ -96,7 +96,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="T.C. No >"
+                        android:text="@string/id"
                         android:textColor="#B3000000" />
 
                     <TextView
@@ -125,7 +125,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Doğum Tarihi >"
+                        android:text="@string/birthday"
                         android:textColor="#B3000000" />
 
 
@@ -166,7 +166,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Hasta Yakını İletişim >"
+                        android:text="@string/patient_relative_contact"
                         android:textColor="#B3000000" />
                 </RelativeLayout>
 
